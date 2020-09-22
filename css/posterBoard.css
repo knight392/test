@@ -1,0 +1,206 @@
+
+/*后面插入的广告条*/
+.poster_board{
+    margin:0 auto 40px;
+    overflow: hidden;
+}
+.poster_board .ad_item{
+    position: relative;
+    display:inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/*小广告条*/
+.poster_board_small{
+    width:1730px;
+}
+
+
+.poster_board_small .ad_item{
+    padding-left:100px;
+    margin-right:2px;
+    width:183px;
+}
+
+
+
+/*大图片广告条*/
+.poster_board_big{
+    width:1710px;
+}
+.poster_board_big .ad_item1{
+    float: left;
+    display: block;
+    position: relative;
+    width:960px;
+    height: 90px;
+    margin:0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.poster_board_big .ad_item2{
+    float: right;
+    position: relative;
+    display: block;
+    width:730px;
+    height: 90px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.poster_board_big .ad_item2 .ad_img_02{
+    display: none;
+}
+
+.poster_board_big .ad_item2 .ad_img_03{
+    display: none;
+}
+
+/*第一个广告条*/
+.poster_board1{
+    height: 90px;
+}
+.poster_board1 .ad_item{
+    height: 90px;
+    background-color:#f8f8f8;
+}
+
+.poster_board1 .ad_item::after{
+    display: inline-block;
+    position: absolute;
+    width:0;
+    height: 0;
+    top:50%;
+    margin-top:-3px;
+    left:78px;
+    border:6px solid transparent;
+    border-right-color:#f8f8f8;
+    content:"";
+}
+.poster_board1 .ad_img{
+    position: absolute;
+    left:0;
+    top:0;
+    width:90px;
+    height: 90px;
+    border-radius: 4px 0 0 4px;
+}
+.poster_board1 .ad_item:hover .ad_title{
+    color:#ff5c38;
+}
+
+
+.poster_board1 .ad_title{
+   display: block;
+   margin-top:23px;
+   padding-right:5px;
+   font-size:16px;
+   overflow: hidden;
+   color:#111;
+}
+.poster_board1 .ad_desc{
+    display:-webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient:vertical;
+    overflow: hidden;
+    height: 32px;
+    padding-right:8px;
+    color:#999;
+    font-size:12px;
+    line-height: 16px;
+}
+
+
+/*第二个广告条*/
+
+.poster_board2{
+    height: 112px;
+}
+.poster_board2 .ad_item{
+    height: 112px;
+}
+
+.poster_board2 .ad_item .ad_bg{
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height: 98px;
+    border-radius:4px;
+}
+.poster_board2 .ad_item .ad_pic{
+    position: absolute;
+    top:15px;
+    left:0;
+    height: 112px;
+    width: 122px;
+    z-index:2;
+    transition: top 0.2s ease;
+}
+.poster_board2 .ad_item:hover .ad_pic{
+    top:0;
+}
+
+/*第三个广告条*/
+.poster_board3{
+    height: 90px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1789px){
+    .poster_board{
+        width:1516px;
+    }
+    .poster_board_small .ad_item{
+        width:198px;
+    }
+    .poster_board_big .ad_item2{
+        width:520px;
+    }
+    .poster_board_big .ad_item2 .ad_img_01{
+        display: none;
+    }
+    .poster_board_big .ad_item2 .ad_img_02{
+        display: inline-block;
+    }
+}
+@media(max-width:1549px){
+    .poster_board{
+        width:1216px;
+    }
+    .poster_board_small .ad_item{
+        width:138px;
+    }
+    .poster_board_big .ad_item2{
+        width:220px;
+    }
+    .poster_board_big .ad_item2 .ad_img_02{
+        display: none;
+    }
+    .poster_board_big .ad_item2 .ad_img_03{
+        display: inline-block;
+    }
+}
+@media(max-width:1280px){
+    .poster_board{
+        width:1000px;
+    }
+    .poster_board_small .ad_item{
+        width:145px;
+    }
+    .poster_board_big .ad_item1{
+        float:none;
+    }
+}
+

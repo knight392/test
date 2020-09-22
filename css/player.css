@@ -1,0 +1,379 @@
+/*播放器*/
+
+.mod_focus_player{
+    position: relative;
+    float: left;
+    width:630px;
+    height:378px;
+    margin-right:18px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #000;
+}
+.mod_focus_player:hover .video_hd{
+    display: block;
+}
+
+.mod_focus_player video{
+    position: absolute;
+    width:100%;
+    margin:auto;
+    object-fit: cover;
+    top:0px;
+    z-index:0;
+}
+
+/*视频标题*/
+.mod_focus_player .video_hd{
+    position: absolute;
+    display: none;
+    padding:15px;
+    margin:0 auto;
+    left:0;
+    right:0;
+    color:#fff;
+    font-size:24px;
+    font-weight: 700; 
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8),rgba(0,0,0,0.2) 50%,transparent);
+}
+
+/*播放或停止时的中间渐变icon*/
+.mod_focus_player .center_icon{
+    position: absolute;
+    display: none;
+    top:50%;
+    left:50%;
+    margin-top:-35px;
+    margin-left:-35px;
+    width:70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    border:none;
+    animation: btnFlash 1.8s ease;
+}
+.mod_focus_player .playing_icon{
+    background-image: url("../img/shortVideo/playing.jpg");
+}
+.mod_focus_player .start_icon{
+    background-image: url("../img/shortVideo/start.jpg");
+}
+
+
+
+@keyframes btnFlash{
+    5%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+
+
+
+/*控制面板*/
+.mod_focus_player .controlPane{
+    display: none;
+}
+.mod_focus_player .progress{
+    
+    position: absolute;
+    background-color: transparent;
+    bottom:32px;
+    width:100%;
+    height:5px;
+    z-index:1;
+}
+.mod_focus_player .progress div{
+    position: absolute;
+    height: 100%;
+    border-radius: 3px;
+}
+.mod_focus_player .total{
+    width: 100%;
+    background-color:rgba(0,0,0,0.3);
+    z-index:1;
+}
+/*以加载进入条，不会做，不知道用什么属性*/
+.mod_focus_player .load{
+    width: 0%;
+    background-color: white;
+    z-index:2;
+}
+.mod_focus_player .current{
+    width: 0%;
+    background-color: orange;
+    z-index:3;
+}
+.mod_focus_player .bar{
+    width:100%;
+    height: 10px;
+    background-color: transparent;
+    z-index:4;
+}
+.mod_focus_player .volumePane{
+    display: none;
+    position: absolute;
+    padding:18px 5px 17px;
+    bottom:80px;
+    right:0px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    transform:rotate(-90deg);
+}
+.mod_focus_player .volumePane input[type="range"]{
+   -webkit-appearance: none;
+   outline: none;
+   width:120px;
+   height: 10px;
+   background: linear-gradient(to right,orange,white 0%, white);
+   border-radius: 5px;
+}
+.mod_focus_player .volumePane input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:15px;
+    height: 15px;
+    background-color:#fff;
+    border:1px solid #999;
+    border-radius: 50%;
+}
+.mod_focus_player .volumePane input[type="range"]::-moz-range-thumb{
+    -moz-appearance: none;
+    width:15px;
+    height: 15px;
+    background-color:#fff;
+    border:1px solid #999;
+    border-radius: 50%;
+}
+.mod_focus_player .playBackRate{
+    display: none;
+    position: absolute;
+    bottom:40px;
+    right:120px;
+    background-color: rgba(0,0,0,0.6);
+    color:#fff;
+    text-align: center;
+    font-size:14px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.mod_focus_player .open{
+    display: block;
+}
+.mod_focus_player .playBackRate ul{
+    padding:0px;
+}
+.mod_focus_player .playBackRate li{
+    list-style: none;
+    width:80px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.mod_focus_player .playBackRate li:hover{
+    color:orange;
+}
+.mod_focus_player .buttons{
+    width:100%;
+    height: 32px;
+    position: absolute;
+    bottom:0px;
+    background-color: transparent;
+    z-index:1;
+}
+
+.mod_focus_player .buttons .button_tip{
+    position: absolute;
+    display: none;
+    width:50px;
+    top:-40px;
+    padding:5px;
+    background-color: rgba(0,0,0,.5);
+    text-align: center;
+    border-radius: 2px;
+    color:#fff;
+    font-size:14px;
+}
+
+.mod_focus_player .buttons span{
+    display: inline-block;
+    cursor: pointer;
+}
+.mod_focus_player .player_icon:hover .button_tip{
+    display: inline-block;
+}
+.mod_focus_player .player_icon{
+    width:32px;
+    height: 32px;
+    background:url("../img/shortVideo/videoIcons.png") no-repeat;
+}
+.mod_focus_player .pause{
+    position: absolute;
+    background-position:-3px 0 ;
+    left:10px;
+}
+.mod_focus_player .pause:hover{
+    background-position:-3px -32px ;
+}
+.mod_focus_player .play{
+    position: absolute;
+    background-position:-3px -60px ;
+    left:10px;
+}
+.mod_focus_player .play:hover{
+    background-position:-3px -92px ;
+}
+.mod_focus_player .next{
+    position: absolute;
+    background-position:-3px -130px ;
+    left:52px;
+}
+.mod_focus_player .next:hover{
+    background-position: -3px -162px;
+}
+
+/*显示播放时间*/
+.mod_focus_player .time{
+    position: absolute;
+    left:94px;
+    line-height: 32px;
+    color:white;
+    font-size:14px;
+    overflow: hidden;
+    cursor: default;
+}
+.mod_focus_player .time .now{
+    cursor: default;
+}
+.mod_focus_player .time .duration{
+    color:#ccc;
+    cursor: default;
+}
+
+.mod_focus_player .buttons .rate{
+    position: absolute;
+    right:135px;
+    width:50px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+    text-align: center;
+    color:#fff;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 16px;
+}
+.mod_focus_player .buttons .rate:hover{
+    color:orange;
+}
+.mod_focus_player .volume{
+    position: absolute;
+    right:52px;
+}
+.mod_focus_player .mute{
+    background-position: -3px -256px;
+}
+.mod_focus_player .mute:hover{
+    background-position: -3px -288px;
+}
+.mod_focus_player .voice{
+    background-position: -3px -193px;
+}
+.mod_focus_player .voice:hover{
+    background-position: -3px -224px;
+}
+
+.mod_focus_player .fullScreen{
+    position: absolute;
+    background-position: -3px -320px;
+    right:10px;
+}
+.mod_focus_player .fullScreen:hover{
+    background-position: -3px -352px;
+}
+.mod_focus_player .video_list{
+    position: absolute;
+    top:0;
+    right:-160px;
+    z-index:5;
+    width:160px;
+    height: 100%;
+    background-color: rgba(33,34,53,.9);
+    transition: right 0.15s ease;
+    box-sizing: border-box;
+    color:#666;
+}
+
+.mod_focus_player .video_list ul{
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    list-style-type: none;
+    scrollbar-width: thin;
+    scrollbar-color:#666 transparent;
+}
+.mod_focus_player .video_list ul::-webkit-scrollbar{
+    width:8px;
+    height: 8px;
+}
+.mod_focus_player .video_list ul::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #777;
+}
+.mod_focus_player .video_list ul::-webkit-scrollbar-track{
+    border-radius: 0;
+    background-color:transparent;
+}
+
+.mod_focus_player .video_list li{
+    display: inline-block;
+    padding:6px 10px 6px 15px;
+    font-size:14px;
+    line-height: 40px;
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    color:#fff;
+    opacity: 0.8;
+    box-sizing: border-box;
+    border-bottom:1px solid rgba(255,255,255,.3);
+}
+.mod_focus_player .video_list li.active{
+    background-color: rgba(15,15,30,.9);
+    opacity: 1;
+    color:#ff5c38;
+
+}
+
+/*面板打开与关闭按钮*/
+.mod_focus_player .fp_switch{
+    position: absolute;
+    top:50%;
+    left:-20px;
+    margin-top:-30px;
+    height: 60px;
+    width:20px;
+    border-radius: 4px 0 0 4px;
+    background-color: rgba(15,15,30,.9);
+    cursor: pointer;
+    color:#fff;
+}
+.mod_focus_player .fp_switch svg{
+    position: absolute;
+    top:50%;
+    left:2.5px;
+    margin-top:-7.5px;
+     
+}
+.mod_focus_player .fp_switch .close{
+    display: none;
+}
+

@@ -1,0 +1,268 @@
+/*共同点*/
+.side_fixed_tool{
+    position: fixed;
+    bottom:40px;
+    right:0px;
+    width:36px;
+    z-index:20;
+    background-color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.18);
+    border-radius: 4px 0 0 4px;
+    text-align: center;
+}
+.side_fixed_tool .tool_item{
+    width:36px;
+    height: 36px;
+    position: relative;
+}
+.side_fixed_tool .tool_item:hover .tool_item_icon path{
+    fill:#fff;
+}
+.side_fixed_tool .top_tool_item{
+    border-radius: 4px 0 0 0;
+}
+.side_fixed_tool .bottom_tool_item{
+    border-radius: 0 0 0 4px;
+}
+
+.side_fixed_tool .tool_item:hover{
+    background-color: #ff5c38;
+}
+.side_fixed_tool .tool_item:hover .toolPane{
+    display: block;
+}
+.side_fixed_tool .tool_item .tool_item_icon{
+    margin-top:8px;
+}
+
+@keyframes toolPane_display{
+    0%{
+        transform:scale(.5);
+        opacity: .5;
+        transform-origin: center right;
+    }
+    60%{
+        transform:scale(1);
+        opacity: 1;
+        transform-origin: center right;
+    }
+    100%{
+        transform:scale(1);
+        opacity: 1;
+        transform-origin: center right;
+    }
+}
+
+.toolPane{
+    position: absolute;
+    display: none;
+    right:50px;
+    background-color:#fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.18);
+    border-radius: 4px;
+    animation: toolPane_display 0.3s ease-out 0s forwards;
+}
+.toolPane::after{
+    position: absolute;
+    width:0;
+    height: 0;
+    filter: drop-shadow(3px 0 1px rgba(0,0,0,.1));
+    right:-6px;
+    border:7px solid transparent;
+    border-left-color: #fff;
+    border-right:none;
+    content:"";
+}
+
+
+.toolPane::before{
+    display: inline-block;
+    position: absolute;
+    top:0;
+    right:-15px;
+    width:15px;
+    height: 100%;
+    background-color:transparent;
+    content:"";
+}
+/*工具1 礼品*/
+.side_fixed_tool .gift .toolPane{
+    top:0;
+    width:320px;
+}
+.side_fixed_tool .gift .toolPane .item{
+    display: inline-block;
+    width:100px;
+    text-decoration: none;
+    text-align: center;
+    padding:15px 0 13px;
+    color:#111;
+}
+.side_fixed_tool .tool_item .toolPane .item:hover{
+    color:#ff5c38;
+}
+
+.side_fixed_tool .tool_item .toolPane .item:hover .title1 {
+    color:#ff5c38;
+}
+.side_fixed_tool .tool_item .toolPane .item:hover .title2 {
+    color:#ff5c38;
+}
+
+.side_fixed_tool .gift .toolPane .item .icon{ 
+    width:36px;
+    height: 36px;
+    display: block;
+    margin:auto auto 8px;
+}
+.side_fixed_tool .gift .toolPane .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.side_fixed_tool .gift .toolPane .item .title1{
+    display: block;
+    width: 100%;
+    font-size:14px;
+    line-height: 18px;
+    color:#313131;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.side_fixed_tool .gift .toolPane .item .title2{
+    display: block;
+    width: 100%;
+    font-size:12px;
+    line-height: 18px;
+    color:#999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.side_fixed_tool .gift .toolPane::after{
+    top:10px;
+}
+/*工具2 联系*/
+.side_fixed_tool .contact .toolPane{
+    top:-40px;
+    width:85px;
+    padding:0 15px;
+}
+.side_fixed_tool .contact .toolPane::after{
+    top:50px;
+}
+.side_fixed_tool .contact .toolPane .content{
+    padding:10px 0;
+}
+.side_fixed_tool .tool_item .toolPane_1col .item{
+    display: block;
+    width: 100%;
+    font-size:14px;
+    line-height: 30px;
+    text-align: center;
+    margin:2px 0;
+    color:#313131;
+    text-decoration: none;
+}
+.side_fixed_tool .tool_item .toolPane_1col .item:hover{
+    color:#ff5c38
+}
+
+/*工具3 下载按钮*/
+.side_fixed_tool .download .toolPane{
+    padding:10px 0px;
+    width:230px;
+    top:-150px;
+}
+.side_fixed_tool .download .toolPane::after{
+    top:160px;
+}
+.side_fixed_tool .download .toolPane .item{
+    display: inline-block;
+    width:54px;
+    padding:0 9px 5px;
+    font-size:14px;
+    color:#999;
+    text-align: center;
+    text-decoration: none;
+}
+.side_fixed_tool .download .toolPane .item .text{
+    display: block;
+}
+.side_fixed_tool .download .toolPane .item:hover{
+    color:#ff5c38
+}
+.side_fixed_tool .download .toolPane .item:hover .icon{
+    fill:#ff5c38;
+    width:100%;
+    height: 100%;
+}
+.side_fixed_tool .download .toolPane .item:hover .icon svg{
+    width:36px;
+    height:36px;
+}
+.side_fixed_tool .download .toolPane .download_btn{
+    display:block;
+    width:120px;
+    margin:10px auto;
+    height: 28px;
+    line-height: 28px;
+    color:#ff5c38;
+    border:1px solid #ff5c38;
+    border-radius: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+.side_fixed_tool .download .toolPane .download_btn:hover{
+    color:#fff;
+    background-color:#ff5c38;
+}
+
+/*工具4 返回顶部*/
+
+.side_fixed_tool .backToTop{
+    display: none;
+}
+.side_fixed_tool .backToTop .tool_item_icon{
+   animation: flash 0.3s ease-out 0s forwards;
+}
+
+@keyframes flash{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.side_fixed_tool .backToTop .toolPane{
+    top:0px;
+    width:85px;
+    padding:5px 15px;
+}
+.side_fixed_tool .backToTop .toolPane::after{
+    top:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
